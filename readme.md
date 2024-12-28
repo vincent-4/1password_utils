@@ -4,36 +4,36 @@
 
 UPDATE: They've added a dupe finder to the Watchtower in the latest beta, hopefully rendering this obsolete: https://1password.community/discussion/comment/697252/#Comment_697252
 
-# Getting started:
 
-0. Clone this repo
-1. https://developer.1password.com/docs/cli/get-started/#sign-in
-2. `pip install -r requirements.txt`
-3. `./dupe_finder.py`
+## Getting Started
 
-Example:
+1. **Clone this repository**:
+   ```bash
+   git clone https://github.com/Taytay/1password_utils.git
+   cd 1password_utils
+   ```
 
-```
-❯ ./dupe_finder.py
+2. **Create and activate a virtual environment**:
+   ```bash
+   python3 -m venv venv # Use python if you don't have python3 in PATH
+   source venv/bin/activate   # On Windows: venv\Scripts\activate
+   ```
+
+3. **Install requirements**:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 
-    This program finds and archives duplicates in a given vault.
-    Use --dry to print the commands that would be run without executing them.
-    Use --help for more information.
+4. **Run the script**:
+   ```bash
+   ./dupe.py
+   ```
 
-Select an account:
-1. ('my.1password.com', '<my-email@my-domain.com>', 'LONGIDHERE')
-2. ('another.domain.com', 'another-email@another-domain.com', 'ANOTHER_LONG_ID')
-Enter the number of the option: 1
-Select a vault:
-1. Private
-2. 1Password
-3. Shared
-Enter the number of the option: 1
-2 duplicates were found:
-  Name of item: 2 duplicates
-  Another item: 2 duplicates
-Would you like to archive these 2 duplicates now? (y/N): y
-Archiving dupe of Name of item
-Archiving dupe of Another item
-```
+   - If you already know the vault name, you can do:
+     ```bash
+     ./dupe.py MyVault
+     ```
+
+   - Or just let the script prompt you to select an account and vault interactively.
+
